@@ -147,7 +147,7 @@ function change(){
          echo color("yellow","!] Silahkan Masukkan kembali\n");
          goto otp;
          }
-         }else{
+         
          echo "Nomor HP sudah terdaftar";
          echo "\nCek Info Akun ? (y/n): ";
          $pilih = trim(fgets(STDIN));
