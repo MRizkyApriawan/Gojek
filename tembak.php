@@ -1,13 +1,13 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
-echo color("green"," ===========================\n");
+echo color("green"," New Gojek Create\n");
 echo color("white","| Angga Sheptian|\n");
-echo color("green","| Auto create Gojek X Redeem voucher |\n");
+echo color("green","| Redeem voucher |\n");
 echo color("red","| github: Navalisthy |\n");
 echo color("yellow","| fanspage :fb.com/darkcasterrip|\n");
 echo color("blue","| Creator : Navalisthy          |\n");
-echo "| Version : Update      |\n";
+echo "| Version : Maret 2020     |\n";
 echo "| Time    :".date('[d-m-Y] [H:i:s]')."   |\n";
 echo " ===========================\n";
 
@@ -55,7 +55,7 @@ echo " ===========================\n";
         echo color("green","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
         echo color("red","\n===========(REDEEM VOUCHER)===========");
-        echo "\n".color("yellow","!] Claim voc G-MPW4WBM");
+        echo "\n".color("yellow","!] Claim voc Voucher");
         echo "\n".color("yellow","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
@@ -93,31 +93,7 @@ echo " ===========================\n";
         $messageboba19 = fetch_value($boba19,'"message":"','"');
         if(strpos($boba19, 'Promo kamu sudah bisa dipakai.')){
         echo "\n".color("green","+] Message: ".$messageboba19);
-        goto goride;
-        }else{
-        echo "\n".color("green","+] Message: ".$messageboba19);
-        goride:
-        echo "\n".color("yellow","!] Claim voc AYOCOBAGOJEK");
-        echo "\n".color("yellow","!] Please wait");
-        for($a=1;$a<=3;$a++){
-        echo color("yellow",".");
-        sleep(1);
-        }
-        sleep(3);
-        $goride = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"AYOCOBAGOJEK"}');
-        $message1 = fetch_value($goride,'"message":"','"');
-        echo "\n".color("green","+] Message: ".$message1);
-        echo "\n".color("yellow","!] Claim voc COBAINGOJEK");
-        echo "\n".color("yellow","!] Please wait");
-        for($a=1;$a<=3;$a++){
-        echo color("yellow",".");
-        sleep(1);
-        }
-        sleep(3);
-        $goride1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAINGOJEK"}');
-        $message2 = fetch_value($goride1,'"message":"','"');
-        echo "\n".color("green","+] Message: ".$message2);
-        sleep(3);
+        
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=10&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
         $voucher3 = getStr1('"title":"','",',$cekvoucher,"3");
