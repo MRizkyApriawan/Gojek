@@ -181,5 +181,5 @@ function change(){
          goto ulang;
   }
  }
-}
+
 echo change()."\n"; ?>
